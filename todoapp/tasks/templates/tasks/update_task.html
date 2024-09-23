@@ -1,0 +1,17 @@
+<h1>Редактировать задачу</h1>
+<form method="POST">
+    {% csrf_token %}
+    <label for="title">Заголовок:</label>
+    <input type="text" name="title" id="title" value="{{ task.title }}"><br>
+    <label for="description">Описание:</label>
+    <textarea name="description" id="description">{{ task.description }}</textarea><br>
+    <label for="category">Категория:</label>
+    <input type="text" name="category" id="category" value="{{ task.category }}"><br>
+    {% if task.completed %}
+    <input type="checkbox" name="completed" id="completed" checked>
+    {% else %}
+    <input type="checkbox" name="completed" id="completed">
+    {% endif %}
+    <label for="completed">Завершена</label><br>
+    <button type="submit">Сохранить</button>
+</form>

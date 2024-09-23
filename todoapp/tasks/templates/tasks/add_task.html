@@ -1,0 +1,11 @@
+<h1>Добавить задачу</h1>
+<form method="POST">
+    {% csrf_token %}
+    <label for="title">Заголовок:</label>
+    <input type="text" name="title" id="title"><br>
+    <label for="description">Описание:</label>
+    <textarea name="description" id="description"></textarea><br>
+    <label for="category">Категория:</label>
+    <input type="text" name="category" id="category"><br>
+    <button type="submit">Добавить</button>
+</form>
